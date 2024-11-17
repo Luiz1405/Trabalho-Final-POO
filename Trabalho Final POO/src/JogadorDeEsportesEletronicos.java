@@ -35,6 +35,9 @@ public class JogadorDeEsportesEletronicos extends Atleta {
 
 
     // metodo que calcula a taxa de vitoria
+    public double taxaDeVitoria() {
+        return (vitorias / vitorias+derrotas) * 100;
+    }
 
     public String toString(){
         return String.format( "[Time: %s, Vitorias: %d, Derrotas: %d]", super.toString(), time, vitorias, derrotas);
