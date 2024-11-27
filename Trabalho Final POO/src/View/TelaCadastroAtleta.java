@@ -1,5 +1,7 @@
 package View;
 
-public class TelaCadastroAtleta {
+import javax.swing.JPanel;
+
+public class TelaCadastroAtleta extends JPanel {
     
 }
