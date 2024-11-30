@@ -3,6 +3,7 @@ package Model;
 import java.util.function.Function;
 
 public class JogadorDeFutebol extends Atleta {
+    private static int contadorAtletaDeFutebol = 0;
 
     private String posicao;
     private int golsmarcados;
@@ -14,6 +15,11 @@ public class JogadorDeFutebol extends Atleta {
         this.posicao = posicao;
         this.golsmarcados = golsmarcados;
         this.assistencias = assistencias;
+        contadorAtletaDeFutebol++;
+    }
+
+    public static int getContadorAtletaDeFutebol() {
+        return contadorAtletaDeFutebol;
     }
 
     public String getPosicao() {
@@ -42,9 +48,10 @@ public class JogadorDeFutebol extends Atleta {
         return desempenho.apply(this);
     }
 
+
     @Override
     public String toString(){
         return String.format("[Posicao: %s, Gols marcados: %d, Assistencias: %d]", super.toString() , posicao, golsmarcados, assistencias);
     }
-    
+
 }
