@@ -46,7 +46,7 @@ public class JogadorDeEsportesEletronicos extends Atleta {
         return (vitorias / vitorias+derrotas) * 100;
     }
 
-
+    @Override
     public String toString(){
         return String.format( "[Time: %s, Vitorias: %d, Derrotas: %d]", super.toString(), time, vitorias, derrotas);
     }

@@ -9,6 +9,7 @@
         private JButton botaoEstatisticasGerais;
 
         private JPanel painelCentral;
+        private JPanel painelAnterior;
 
         public TelaPrincipal(){
             setTitle("Gerenciador de Atletas");
@@ -36,7 +37,7 @@
             add(botoes, BorderLayout.NORTH);
             add(painelCentral, BorderLayout.CENTER);
 
-            
+            painelAnterior = new JPanel();
         }
 
             public JButton getBotaoCadastrarAtleta() {
@@ -56,10 +57,18 @@
             }
         
             public void atualizarPainelCentral(JPanel novoPainel) {
+                painelAnterior = painelAnterior;
                 painelCentral.removeAll();
                 painelCentral.add(novoPainel, BorderLayout.CENTER);
                 painelCentral.revalidate();
                 painelCentral.repaint();
             
         }
+
+            public void voltarPainelAnterior(){
+            painelCentral.removeAll();
+            painelCentral.add(painelAnterior, BorderLayout.CENTER);
+            painelCentral.revalidate();
+            painelCentral.repaint();
+            }
     }
