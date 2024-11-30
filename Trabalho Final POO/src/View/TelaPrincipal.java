@@ -1,6 +1,8 @@
     package View;
     import javax.swing.*;
     import java.awt.*;
+    import java.awt.event.ActionEvent;
+    import java.awt.event.ActionListener;
 
     public class TelaPrincipal extends JFrame {
         private JButton botaoCadastrarAtleta;
@@ -39,7 +41,16 @@
             add(botoes, BorderLayout.NORTH);
             add(painelCentral, BorderLayout.CENTER);
 
-            
+            setVisible(true);
+
+            class IniciarTelaCadastroAtletas implements ActionListener {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    TelaCadastroAtleta cadastro = new TelaCadastroAtleta();
+                }
+            }
+            IniciarTelaCadastroAtletas i = new IniciarTelaCadastroAtletas();
+            botaoCadastrarAtleta.addActionListener(i);
         }
 
             public JButton getBotaoCadastrarAtleta() {

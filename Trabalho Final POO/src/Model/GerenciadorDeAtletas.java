@@ -10,6 +10,9 @@ public class GerenciadorDeAtletas {
     }
 
     //METODO PARA ADICIONAR ATLETA
+    public void adicionarAtleta(Atleta atleta){
+        atletas.add(atleta);
+    }
     //METODO PARA LISTAR OS ATLETAS(PODEMOS CRIAR UMA FILTRAGEM, POR EXEMPLO PUXAR APENAS POR JOGADORES DE BASQUETE)
     //METODO PARA PESQUISAR ATLETA POR NOME
     //METODO PARA AS ESTATISTICAS GERAIS, COMO POR EXEMPLO: Número total de atletas, Número de atletas por tipo, Somatório e medias dos salarios, somatorio de e media de algum atributo especifico.
