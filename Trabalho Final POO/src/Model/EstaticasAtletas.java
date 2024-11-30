@@ -38,19 +38,19 @@ public class EstaticasAtletas {
         return maiorSalario;
     }
 
-    public String toString(){
-        return String.format(
-        "Estátisicas Gerais\n" ,
-        "Média Salarial: R$%.2f\n" ,
-        "\nSoma Total dos salários: R$%.2f" ,
-        "\nMaior Salario: R$%.2f" ,
-        "\nMenor Salario: R$%.2f",
-        "\nNúmero total de atletas: %d" ,
-        "\nNúmero total de jogadores de Esportes eletronicos: %d" ,
-        "\nNúmero total de jgoadores de futebol: %d" ,
-        "\nNúmero total de jogadores de Volei: %d" ,
-         mediaSalarioTotal, somaSalarioTotal, maiorSalario, menorSalario, numeroDeAtletas, numeroAtletaEletronico, numeroAtletaFutebol, numeroAtletaVolei);
-    }
-
-    
+    @Override
+public String toString() {
+    return String.format(
+        "Média Salarial: R$%.2f\n" +
+        "Soma Total dos salários: R$%.2f\n" +
+        "Maior Salário: R$%.2f\n" +
+        "Menor Salário: R$%.2f\n" +
+        "Número total de atletas: %d\n" +
+        "Número total de jogadores de Esportes Eletrônicos: %d\n" +
+        "Número total de jogadores de Futebol: %d\n" +
+        "Número total de jogadores de Vôlei: %d",
+        mediaSalarioTotal, somaSalarioTotal, maiorSalario, menorSalario, 
+        numeroDeAtletas, numeroAtletaEletronico, numeroAtletaFutebol, numeroAtletaVolei
+    );
+}
 }
