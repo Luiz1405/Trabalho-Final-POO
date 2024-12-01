@@ -11,12 +11,10 @@ public class GerenciadorDeAtletas {
 
 
     //METODO PARA ADICIONAR ATLETA
-<<<<<<< HEAD
-=======
+
     public void adicionarAtleta(Atleta atleta){
         atletas.add(atleta);
     }
->>>>>>> feature-EstatisticasController
     public EstaticasAtletas getEstatisticasGerais(){
         double mediaSalarioTotal = atletas.stream()
                .mapToDouble(Atleta::getSalario)
