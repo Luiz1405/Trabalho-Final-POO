@@ -12,8 +12,16 @@ public class GerenciadorDeAtletas {
 
     //METODO PARA ADICIONAR ATLETA
 
-    public void adicionarAtleta(Atleta atleta){
+    public boolean adicionarAtleta(Atleta atleta){
+        for(Atleta o:atletas){
+            if(o.getNome().equals(atleta.getNome())) {
+                return false;
+            }
+        }
         atletas.add(atleta);
+        return true;
+
+
     }
     public EstaticasAtletas getEstatisticasGerais(){
         double mediaSalarioTotal = atletas.stream()
