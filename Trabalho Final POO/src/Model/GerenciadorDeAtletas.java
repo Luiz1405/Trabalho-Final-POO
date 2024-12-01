@@ -20,9 +20,23 @@ public class GerenciadorDeAtletas {
         }
         atletas.add(atleta);
         return true;
-
-
     }
+
+    public boolean removerAtleta(String nome,int idade,String nacionalidade){
+        for(Atleta o:atletas){//Fiz desse jeito pra ele só precisar conferir um de cada vez
+                              //gastando menos performance pra percorrer
+            if(o.getNome().equals(nome)){
+                if(o.getIdade()==idade){
+                    if(o.getNacionalidade().equals(nacionalidade)){
+                        atletas.remove(o);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public EstaticasAtletas getEstatisticasGerais(){
         double mediaSalarioTotal = atletas.stream()
                .mapToDouble(Atleta::getSalario)
