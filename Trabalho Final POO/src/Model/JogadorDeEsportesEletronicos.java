@@ -1,8 +1,9 @@
 package Model;
 public class JogadorDeEsportesEletronicos extends Atleta {
 
-    private String time;
+    private static int contadorAtletaDeEsportesEletronicos = 0;
 
+    private String time;
     private int vitorias;
     private int derrotas;
 
@@ -11,7 +12,12 @@ public class JogadorDeEsportesEletronicos extends Atleta {
         this.time = time;
         this.vitorias = vitorias;
         this.derrotas = derrotas;
+        contadorAtletaDeEsportesEletronicos++;
 
+    }
+
+    public static int getContadorAtletaDeEsportesEletronicos() {
+        return contadorAtletaDeEsportesEletronicos;
     }
 
     public String getTime() {
@@ -35,11 +41,8 @@ public class JogadorDeEsportesEletronicos extends Atleta {
     }
 
 
-    // metodo que calcula a taxa de vitoria
-    public double taxaDeVitoria() {
-        return (vitorias / vitorias+derrotas) * 100;
-    }
 
+    @Override
     public String toString(){
         return String.format( "[Time: %s, Vitorias: %d, Derrotas: %d]", super.toString(), time, vitorias, derrotas);
     }

@@ -1,12 +1,13 @@
 package Model;
 public class JogadorDeVolei extends Atleta {
+    private static int contadorAtletaVolei = 0;
 
     private String posicao;
     private int aces;
     private int bloqueios;
     private int pontosFeitos;
     private double altura;
-
+    
 
     public JogadorDeVolei(String nome, int idade, String nacionalidade, double salario, String posicao, int aces, int bloqueios, int pontosFeitos, double altura) {
         super(nome, idade, nacionalidade, salario);
@@ -15,6 +16,11 @@ public class JogadorDeVolei extends Atleta {
         this.bloqueios = bloqueios;
         this.pontosFeitos = pontosFeitos;
         this.altura = altura;
+        contadorAtletaVolei++;
+    }
+
+    public static int getContadorAtletaVolei() {
+        return contadorAtletaVolei;
     }
 
     public String getPosicao(){
@@ -52,6 +58,7 @@ public class JogadorDeVolei extends Atleta {
     public void setAltura(double altura) {
         this.altura = altura;
     }
+
 
     public String toString(){
         return String.format("[Posicao: %s, posicao, Aces: %d, Bloqueios: %d, Pontos Feitos: %d, Altura: %.2f]", super.toString(), 
