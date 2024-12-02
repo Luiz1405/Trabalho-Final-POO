@@ -45,6 +45,7 @@ public abstract class Atleta{
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
     public abstract String getEsporte();
     
     @Override

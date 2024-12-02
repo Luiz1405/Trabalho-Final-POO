@@ -57,13 +57,4 @@ public class GerenciadorDeAtletas {
     public List<Atleta> getLista(){
         return atletas;
     }
-
-    public Atleta pesquisarAtleta(String nome) {
-        for (Atleta o : atletas) {
-            if (o.getNome().equals(nome)) {
-                return o;
-            }
-        }
-        return null;
-    }
 }

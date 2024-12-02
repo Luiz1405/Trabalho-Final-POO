@@ -42,7 +42,6 @@ public class JogadorDeFutebol extends Atleta {
         this.assistencias = assistencias;
     }
 
-    //criar um metodo utilizando lambda para calcular o desempenho, com base em gols e assistencias.
     public double calcularDesempenho() {
         Function<JogadorDeFutebol, Double> desempenho = jogador -> jogador.getGolsmarcados() * 1.5 + jogador.getAssistencias();
         return desempenho.apply(this);

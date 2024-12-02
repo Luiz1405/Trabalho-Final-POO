@@ -44,10 +44,6 @@ public class JogadorDeEsportesEletronicos extends Atleta {
         return "E-Sports";
     }
 
-    // metodo que calcula a taxa de vitoria
-    public double taxaDeVitoria() {
-        return (vitorias / vitorias+derrotas) * 100;
-    }
 
     @Override
     public String toString(){
