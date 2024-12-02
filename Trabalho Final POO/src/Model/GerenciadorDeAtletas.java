@@ -10,7 +10,6 @@ public class GerenciadorDeAtletas {
     }
 
 
-    //METODO PARA ADICIONAR ATLETA
 
     public void adicionarAtleta(Atleta atleta){
         atletas.add(atleta);
