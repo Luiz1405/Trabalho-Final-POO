@@ -1,8 +1,11 @@
+import Controller.CadastroAtletaController;
 import Controller.EstatisticasController;
 import Model.GerenciadorDeAtletas;
 import Model.JogadorDeEsportesEletronicos;
 import Model.JogadorDeFutebol;
 import Model.JogadorDeVolei;
+
+import View.TelaCadastroAtleta;
 import View.TelaPrincipal;
 
 public class App {
@@ -37,9 +40,10 @@ public class App {
     gerenciadorDeAtletas.adicionarAtleta(jogador11);
     gerenciadorDeAtletas.adicionarAtleta(jogador12);
 
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
+        TelaPrincipal telaPrincipal = new TelaPrincipal(gerenciadorDeAtletas);
 
         EstatisticasController estatisticas = new EstatisticasController(telaPrincipal, gerenciadorDeAtletas);
         telaPrincipal.setVisible(true);
+
     }
 }

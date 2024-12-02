@@ -1,4 +1,7 @@
     package View;
+    import Controller.CadastroAtletaController;
+    import Model.GerenciadorDeAtletas;
+
     import javax.swing.*;
     import java.awt.*;
     import java.awt.event.ActionEvent;
@@ -13,7 +16,7 @@
         private JPanel painelCentral;
         private JPanel painelAnterior;
 
-        public TelaPrincipal(){
+        public TelaPrincipal(GerenciadorDeAtletas gerenciadorDeAtletas){
             setTitle("Gerenciador de Atletas");
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setSize(800, 600);
@@ -45,6 +48,7 @@
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     TelaCadastroAtleta cadastro = new TelaCadastroAtleta();
+                    CadastroAtletaController c = new CadastroAtletaController(cadastro, gerenciadorDeAtletas);
                 }
             }
             IniciarTelaCadastroAtletas i = new IniciarTelaCadastroAtletas();
