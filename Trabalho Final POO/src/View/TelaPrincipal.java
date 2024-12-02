@@ -8,10 +8,10 @@
         private JButton botaoCadastrarAtleta;
         private JButton botaoExcluirAtleta;
         private JButton botaoListarAtletas;
-        private JButton botaoQuantidadePorInstancia;
         private JButton botaoEstatisticasGerais;
 
         private JPanel painelCentral;
+        private JPanel painelAnterior;
 
         public TelaPrincipal(){
             setTitle("Gerenciador de Atletas");
@@ -26,13 +26,11 @@
             botaoCadastrarAtleta = new JButton("Cadastrar Atleta");
             botaoExcluirAtleta = new JButton("Excluir Atleta");
             botaoListarAtletas = new JButton("Listar Todos Atletas");
-            botaoQuantidadePorInstancia = new JButton("Quantidade por tipo");
             botaoEstatisticasGerais = new JButton("Estatisticas Gerais");
 
             botoes.add(botaoCadastrarAtleta);
             botoes.add(botaoExcluirAtleta);
             botoes.add(botaoListarAtletas);
-            botoes.add(botaoQuantidadePorInstancia);
             botoes.add(botaoEstatisticasGerais);
 
             painelCentral = new JPanel();
@@ -51,6 +49,8 @@
             }
             IniciarTelaCadastroAtletas i = new IniciarTelaCadastroAtletas();
             botaoCadastrarAtleta.addActionListener(i);
+            painelAnterior = new JPanel();
+
         }
 
             public JButton getBotaoCadastrarAtleta() {
@@ -65,19 +65,23 @@
                 return botaoListarAtletas;
             }
         
-            public JButton getBotaoQuantidadePorInstancia() {
-                return botaoQuantidadePorInstancia;
-            }
-        
             public JButton getBotaoEstatisticas() {
                 return botaoEstatisticasGerais;
             }
         
             public void atualizarPainelCentral(JPanel novoPainel) {
+                painelAnterior = painelAnterior;
                 painelCentral.removeAll();
                 painelCentral.add(novoPainel, BorderLayout.CENTER);
                 painelCentral.revalidate();
                 painelCentral.repaint();
             
         }
+
+            public void voltarPainelAnterior(){
+            painelCentral.removeAll();
+            painelCentral.add(painelAnterior, BorderLayout.CENTER);
+            painelCentral.revalidate();
+            painelCentral.repaint();
+            }
     }

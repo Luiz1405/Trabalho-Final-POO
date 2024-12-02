@@ -1,5 +1,6 @@
 package Model;
 public abstract class Atleta{
+    private static int contadorAtleta = 0;
     private String nome;
     private int idade;
     private String nacionalidade;
@@ -10,6 +11,11 @@ public abstract class Atleta{
         this.idade = idade;
         this.nacionalidade = nacionalidade;
         this.salario = salario;
+        contadorAtleta++;
+    }
+
+    public static int getTotalAtletas(){
+        return contadorAtleta;
     }
 
     public String getNome() {
@@ -39,8 +45,7 @@ public abstract class Atleta{
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
-    //Fazer um método abstrato para criar estatisticas especificas de cada atleta
+    
     @Override
     public String toString(){
         return String.format("[Nome do atleta: %s, Idade do atleta: %d, Nacionalidade: %s, Salario: R$%.2f]", nome, idade, nacionalidade, salario);
