@@ -38,7 +38,7 @@ public class App {
     gerenciadorDeAtletas.adicionarAtleta(jogador11);
     gerenciadorDeAtletas.adicionarAtleta(jogador12);
 
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
+        TelaPrincipal telaPrincipal = new TelaPrincipal(gerenciadorDeAtletas);
 
         EstatisticasController estatisticas = new EstatisticasController(telaPrincipal, gerenciadorDeAtletas);
         ListaPainelAtletas lista= new ListaPainelAtletas(gerenciadorDeAtletas,telaPrincipal);

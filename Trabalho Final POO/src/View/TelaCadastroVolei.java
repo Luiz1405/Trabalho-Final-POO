@@ -17,6 +17,7 @@ public class TelaCadastroVolei extends JFrame {
     public TelaCadastroVolei(GerenciadorDeAtletas gerenciadorDeAtletas) {
         setLayout(new BorderLayout());
         JPanel painelCima = new JPanel(new GridLayout(4, 2, 10, 10));
+        
         lbNome = new JLabel("Nome:");
         txtNome = new JTextArea();
         painelCima.add(lbNome);
