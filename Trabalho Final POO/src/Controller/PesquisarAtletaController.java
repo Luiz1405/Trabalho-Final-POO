@@ -27,25 +27,33 @@ public class PesquisarAtletaController implements ActionListener {
         JTextField nomeAtleta = new JTextField(20);
         painelPesquisa.add(pesquisaAtleta);
         painelPesquisa.add(nomeAtleta);
-        telaPrincipal.atualizarPainelCentral(painelPesquisa);
+        
 
         JButton pesquisar = new JButton("Pesquisar");
         painelPesquisa.add(pesquisar);
+        telaPrincipal.atualizarPainelCentral(painelPesquisa);
+
         pesquisar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String nome = nomeAtleta.getText();
-                Object a = null;
-                for (Atleta o : gerenciadorDeAtletas.getLista()){
-                    if (o.getNome().equalsIgnoreCase(nome)){
-                        a = o;
-                    }
+                Atleta atletaEcontrado = gerenciadorDeAtletas.buscarAtletaPorNome(nome);                for (Atleta o : gerenciadorDeAtletas.getLista()){
+                    
+                if(atletaEcontrado != null) {
+                    JTextArea areaAtletaEncontrado = new JTextArea(10,30);
+                    areaAtletaEncontrado.setText(atletaEcontrado.toString());
+                    areaAtletaEncontrado.setEditable(false);
+
+                    //Adicionei um scroll caso tiver mais de um atleta ou muitas informações
+                    JPanel mostrarResultado = new JPanel();
+                    mostrarResultado.add(new JScrollPane(areaAtletaEncontrado));
+                    telaPrincipal.atualizarPainelCentral(mostrarResultado);
                 }
-                if (a != null) {
-                    JOptionPane.showMessageDialog(null, "Atleta encontrado.");
-                }
-                if (a == null) {
+                else {
                     JOptionPane.showMessageDialog(null, "Atleta não encontrado.");
+                    
+                }
                 }
             }
         });

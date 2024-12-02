@@ -47,7 +47,7 @@ public class JogadorDeEsportesEletronicos extends Atleta {
 
     @Override
     public String toString(){
-        return String.format( "[Time: %s, Vitorias: %d, Derrotas: %d]", super.toString(), time, vitorias, derrotas);
+        return String.format( "[Base: %s, Time: %s, Vitorias: %d, Derrotas: %d]", super.toString(), time, vitorias, derrotas);
     }
 
     

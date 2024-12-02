@@ -57,4 +57,14 @@ public class GerenciadorDeAtletas {
     public List<Atleta> getLista(){
         return atletas;
     }
+
+    public Atleta buscarAtletaPorNome(String nome){
+        for (Atleta atleta : atletas){
+            if(atleta.getNome().equalsIgnoreCase(nome)){
+                return atleta;
+            }
+        }
+
+        return null;
+    }
 }
