@@ -1,4 +1,5 @@
 import Controller.EstatisticasController;
+import Controller.PesquisarAtletaController;
 import Model.GerenciadorDeAtletas;
 import Model.JogadorDeEsportesEletronicos;
 import Model.JogadorDeFutebol;
@@ -41,7 +42,8 @@ public class App {
         TelaPrincipal telaPrincipal = new TelaPrincipal(gerenciadorDeAtletas);
 
         EstatisticasController estatisticas = new EstatisticasController(telaPrincipal, gerenciadorDeAtletas);
-        ListaPainelAtletas lista= new ListaPainelAtletas(gerenciadorDeAtletas,telaPrincipal);
+        ListaPainelAtletas lista = new ListaPainelAtletas(gerenciadorDeAtletas,telaPrincipal);
+        PesquisarAtletaController pesquisar = new PesquisarAtletaController(telaPrincipal, gerenciadorDeAtletas);
         telaPrincipal.setVisible(true);
         
     }

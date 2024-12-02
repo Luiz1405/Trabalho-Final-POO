@@ -16,8 +16,7 @@ public class GerenciadorDeAtletas {
     }
 
     public boolean removerAtleta(String nome,int idade,String nacionalidade){
-        for(Atleta o:atletas){//Fiz desse jeito pra ele só precisar conferir um de cada vez
-                              //gastando menos performance pra percorrer
+        for(Atleta o:atletas){
             if(o.getNome().equals(nome)){
                 if(o.getIdade()==idade){
                     if(o.getNacionalidade().equals(nacionalidade)){
@@ -57,5 +56,14 @@ public class GerenciadorDeAtletas {
     }
     public List<Atleta> getLista(){
         return atletas;
+    }
+
+    public Atleta pesquisarAtleta(String nome) {
+        for (Atleta o : atletas) {
+            if (o.getNome().equals(nome)) {
+                return o;
+            }
+        }
+        return null;
     }
 }

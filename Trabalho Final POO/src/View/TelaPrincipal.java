@@ -9,9 +9,9 @@
 
     public class TelaPrincipal extends JFrame {
         private JButton botaoCadastrarAtleta;
-        private JButton botaoExcluirAtleta;
         private JButton botaoListarAtletas;
         private JButton botaoEstatisticasGerais;
+        private JButton botaoPesquisarAtleta;
 
         private JPanel painelCentral;
         private JPanel painelAnterior;
@@ -27,14 +27,14 @@
             botoes.setLayout(new GridLayout(1, 5));
             
             botaoCadastrarAtleta = new JButton("Cadastrar Atleta");
-            botaoExcluirAtleta = new JButton("Excluir Atleta");
             botaoListarAtletas = new JButton("Listar Todos Atletas");
             botaoEstatisticasGerais = new JButton("Estatisticas Gerais");
+            botaoPesquisarAtleta = new JButton("Pesquisar Atleta");
 
             botoes.add(botaoCadastrarAtleta);
-            botoes.add(botaoExcluirAtleta);
             botoes.add(botaoListarAtletas);
             botoes.add(botaoEstatisticasGerais);
+            botoes.add(botaoPesquisarAtleta);
 
             painelCentral = new JPanel();
             painelCentral.setLayout(new BorderLayout());
@@ -60,11 +60,7 @@
             public JButton getBotaoCadastrarAtleta() {
                 return botaoCadastrarAtleta;
             }
-        
-            public JButton getBotaoExcluirAtleta() {
-                return botaoExcluirAtleta;
-            }
-        
+
             public JButton getBotaoListarAtletas() {
                 return botaoListarAtletas;
             }
@@ -72,6 +68,8 @@
             public JButton getBotaoEstatisticas() {
                 return botaoEstatisticasGerais;
             }
+
+            public JButton getBotaoPesquisarAtleta() { return botaoPesquisarAtleta; }
         
             public void atualizarPainelCentral(JPanel novoPainel) {
                 painelAnterior = painelAnterior;
