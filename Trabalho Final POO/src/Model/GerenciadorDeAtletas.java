@@ -12,14 +12,8 @@ public class GerenciadorDeAtletas {
 
     //METODO PARA ADICIONAR ATLETA
 
-    public boolean adicionarAtleta(Atleta atleta){
-        for(Atleta o:atletas){
-            if(o.getNome().equals(atleta.getNome())) {
-                return false;
-            }
-        }
+    public void adicionarAtleta(Atleta atleta){
         atletas.add(atleta);
-        return true;
     }
 
     public boolean removerAtleta(String nome,int idade,String nacionalidade){
@@ -61,5 +55,8 @@ public class GerenciadorDeAtletas {
         int jogadoresVolei = JogadorDeVolei.getContadorAtletaVolei();
         return new EstaticasAtletas(mediaSalarioTotal, somaSalarioTotal, menorSalario, maiorSalario, totalAtletas, jogadoresEletronicos, jogadoresFutebol, jogadoresVolei);
                                  
+    }
+    public List<Atleta> getLista(){
+        return atletas;
     }
 }

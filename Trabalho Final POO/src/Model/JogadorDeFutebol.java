@@ -48,7 +48,9 @@ public class JogadorDeFutebol extends Atleta {
         return desempenho.apply(this);
     }
 
-
+    public String getEsporte(){
+        return "Futebol";
+    }
     @Override
     public String toString(){
         return String.format("[Posicao: %s, Gols marcados: %d, Assistencias: %d]", super.toString() , posicao, golsmarcados, assistencias);

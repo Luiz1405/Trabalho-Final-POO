@@ -58,7 +58,9 @@ public class JogadorDeVolei extends Atleta {
     public void setAltura(double altura) {
         this.altura = altura;
     }
-
+    public String getEsporte(){
+        return "Vôlei";
+    }
 
     public String toString(){
         return String.format("[Posicao: %s, posicao, Aces: %d, Bloqueios: %d, Pontos Feitos: %d, Altura: %.2f]", super.toString(), 

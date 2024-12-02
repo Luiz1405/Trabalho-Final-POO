@@ -3,6 +3,7 @@ import Model.GerenciadorDeAtletas;
 import Model.JogadorDeEsportesEletronicos;
 import Model.JogadorDeFutebol;
 import Model.JogadorDeVolei;
+import View.ListaPainelAtletas;
 import View.TelaPrincipal;
 
 public class App {
@@ -40,6 +41,7 @@ public class App {
         TelaPrincipal telaPrincipal = new TelaPrincipal();
 
         EstatisticasController estatisticas = new EstatisticasController(telaPrincipal, gerenciadorDeAtletas);
+        ListaPainelAtletas lista= new ListaPainelAtletas(gerenciadorDeAtletas,telaPrincipal);
         telaPrincipal.setVisible(true);
         
     }

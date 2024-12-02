@@ -39,7 +39,10 @@ public class JogadorDeEsportesEletronicos extends Atleta {
     public void setDerrotas(int derrotas) {
         this.derrotas = derrotas;
     }
-
+    
+    public String getEsporte(){
+        return "E-Sports";
+    }
 
     // metodo que calcula a taxa de vitoria
     public double taxaDeVitoria() {
